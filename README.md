@@ -26,3 +26,8 @@ To manage PHPMailer and Parsedown with Composer:
    composer require phpmailer/phpmailer
    composer require erusev/parsedown
    ```
+
+## Contact
+Contact
+Built by Matthew Way. Reach out via [Web Design Fusion](https://webdesignfusion.com) or open an issue on GitHub.
+
