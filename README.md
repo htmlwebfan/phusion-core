@@ -1,5 +1,7 @@
 # PHusion Core
 
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+
 A lightweight PHP MVC framework.
 
 ## Installation
