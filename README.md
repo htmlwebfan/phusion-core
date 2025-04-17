@@ -1,5 +1,5 @@
 # PHusion Core
-[![Latest Version](https://img.shields.io/github/release/htmlwebfan/phusion-core.svg?style=flat-square)](https://github.com/htmlwebfan/phusion-core/releases)
+
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
 A lightweight PHP MVC framework.
