@@ -1,0 +1,7 @@
+<h1>Email Verification</h1>
+<?php if (isset($success)): ?>
+    <p style="color: green;"><?php echo $e($success); ?></p>
+    <p><a href="<?php echo $e($base_url . '/auth/login'); ?>">Login now</a></p>
+<?php else: ?>
+    <p style="color: red;"><?php echo $e($error); ?></p>
+<?php endif; ?>

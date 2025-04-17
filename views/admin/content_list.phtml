@@ -1,0 +1,28 @@
+<h2>Manage Content</h2>
+<p><a href="<?php echo $e($base_url . '/admin/content/add'); ?>">Add New</a></p>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Slug</th>
+        <th>Type</th>
+        <th>Published</th>
+        <th>Actions</th>
+    </tr>
+    <?php foreach ($items as $item): ?>
+        <tr>
+            <td><?php echo $e($item['id']); ?></td>
+            <td><?php echo $e($item['title']); ?></td>
+            <td><?php echo $e($item['slug']); ?></td>
+            <td><?php echo $e($item['type']); ?></td>
+            <td><?php echo $e($item['published'] ? 'Yes' : 'No'); ?></td>
+            <td>
+                <a href="<?php echo $e($base_url . '/admin/content/edit/' . $item['id']); ?>">Edit</a>
+                <form method="POST" action="<?php echo $e($base_url . '/admin/content/delete/' . $item['id']); ?>" style="display:inline;">
+                    <input type="hidden" name="csrf_token" value="<?php echo $e($csrf_token); ?>">
+                    <button type="submit" onclick="return confirm('Are you sure?');">Delete</button>
+                </form>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>

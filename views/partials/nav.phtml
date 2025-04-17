@@ -1,0 +1,12 @@
+<nav>
+    <a href="<?php echo $e($base_url . '/'); ?>">Home</a>
+    <a href="<?php echo $e($base_url . '/blog'); ?>">Blog</a>
+    <?php if ($sessionModel->isLoggedIn()): ?>
+        <?php if ($sessionModel->getUser()['role'] === 'admin'): ?>
+            <a href="<?php echo $e($base_url . '/admin'); ?>">Admin Panel</a>
+        <?php endif; ?>
+        <a href="<?php echo $e($base_url . '/auth/logout'); ?>">Logout</a>
+    <?php else: ?>
+        <a href="<?php echo $e($base_url . '/auth/login'); ?>">Login</a>
+    <?php endif; ?>
+</nav>

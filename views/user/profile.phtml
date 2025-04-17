@@ -1,0 +1,9 @@
+<h1>User Profile</h1>
+<?php if ($user): ?>
+    <p><strong>Name:</strong> <?php echo $e($user['name']); ?></p>
+    <p><strong>Email:</strong> <?php echo $e($user['email']); ?></p>
+<?php elseif (isset($error)): ?>
+    <p><?php echo $e($error); ?></p>
+<?php else: ?>
+    <p>No user ID provided.</p>
+<?php endif; ?>

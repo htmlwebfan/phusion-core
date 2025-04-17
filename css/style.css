@@ -1,0 +1,19 @@
+/* public/css/style.css */
+.markdown-content h1 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+.markdown-content strong {
+    font-weight: bold;
+}
+.markdown-content em {
+    font-style: italic;
+}
+.markdown-content pre {
+    background: #f4f4f4;
+    padding: 10px;
+    overflow-x: auto;
+}
+.markdown-content code {
+    font-family: monospace;
+}

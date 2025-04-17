@@ -1,0 +1,7 @@
+<h1>Welcome to the Fusion Framework</h1>
+<p>This is a simple OOP MVC framework in PHP.</p>
+<ul>
+<?php foreach ($users as $user): ?>
+    <li><a href="<?php echo $e($base_url . '/user/profile'.'/'.$user['id']); ?>"><?php echo $e($user['name']); ?></a></li>
+<?php endforeach; ?>
+</ul>

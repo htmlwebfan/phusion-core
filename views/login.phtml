@@ -1,0 +1,18 @@
+<h1>Login</h1>
+<?php if (!empty($errors)): ?>
+    <ul style="color: red;">
+        <?php foreach ($errors as $error): ?>
+            <li><?php echo $e($error); ?></li>
+        <?php endforeach; ?>
+    </ul>
+<?php endif; ?>
+<form method="POST" action="<?php echo $e($base_url . '/auth/login'); ?>">
+    <input type="hidden" name="csrf_token" value="<?php echo $e($csrf_token); ?>">
+    <label>Email: <input type="email" name="email" value="<?php echo $e($email ?? ''); ?>" required></label><br>
+    <label>Password: <input type="password" name="password" required></label><br>
+    <div class="g-recaptcha" data-sitekey="<?php echo $e($recaptcha_site_key); ?>"></div>
+    <button type="submit">Login</button>
+</form>
+<p><a href="<?php echo $e($base_url . '/password/request'); ?>">Forgot Password?</a></p>
+<p><a href="<?php echo $e($base_url . '/register'); ?>">Create an Account</a></p>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>

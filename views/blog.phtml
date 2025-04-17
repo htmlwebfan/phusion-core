@@ -1,0 +1,6 @@
+<h2>Blog</h2>
+<?php foreach ($posts as $post): ?>
+    <h3><a href="<?php echo $e($base_url . '/' . $post['slug']); ?>"><?php echo $e($post['title']); ?></a></h3>
+    <p><?php echo $e(substr($post['content'], 0, 100)) . '...'; ?></p>
+    <p>Posted on <?php echo $e(date('F j, Y', strtotime($post['created_at']))); ?></p>
+<?php endforeach; ?>

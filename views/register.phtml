@@ -1,0 +1,22 @@
+<h1>Register</h1>
+<?php if (!empty($errors)): ?>
+    <ul style="color: red;">
+        <?php foreach ($errors as $error): ?>
+            <li><?php echo $e($error); ?></li>
+        <?php endforeach; ?>
+    </ul>
+<?php elseif (isset($success)): ?>
+    <p style="color: green;"><?php echo $e($success); ?></p>
+<?php endif; ?>
+<?php if (!isset($success)): ?>
+    <form method="POST" action="<?php echo $e($base_url . '/register'); ?>">
+        <input type="hidden" name="csrf_token" value="<?php echo $e($csrf_token); ?>">
+        <label>Name: <input type="text" name="name" value="<?php echo $e($name ?? ''); ?>" required></label><br>
+        <label>Email: <input type="email" name="email" value="<?php echo $e($email ?? ''); ?>" required></label><br>
+        <label>Password: <input type="password" name="password" required></label><br>
+        <div class="g-recaptcha" data-sitekey="<?php echo $e($recaptcha_site_key); ?>"></div>
+        <button type="submit">Register</button>
+    </form>
+<?php endif; ?>
+<p>Already have an account? <a href="<?php echo $e($base_url . '/auth/login'); ?>">Login</a></p>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>

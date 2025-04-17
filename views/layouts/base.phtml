@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $e($meta['title'] ?? 'My Site'); ?></title>
+    <meta name="description" content="<?php echo $e($meta['description'] ?? ''); ?>">
+    <meta property="og:title" content="<?php echo $e($meta['title'] ?? ''); ?>">
+    <meta property="og:description" content="<?php echo $e($meta['description'] ?? ''); ?>">
+    <meta property="og:image" content="<?php echo $e($meta['image'] ?? ''); ?>">
+    <meta property="og:url" content="<?php echo $e($meta['url'] ?? $base_url); ?>">
+    <meta property="og:type" content="<?php echo $e($meta['type'] ?? 'website'); ?>">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="<?php echo $e($config['social_media']['twitter']); ?>">
+    <meta name="twitter:title" content="<?php echo $e($meta['title'] ?? ''); ?>">
+    <meta name="twitter:description" content="<?php echo $e($meta['description'] ?? ''); ?>">
+    <meta name="twitter:image" content="<?php echo $e($meta['image'] ?? ''); ?>">
+    <link rel="stylesheet" href="<?php echo $e($base_url . '/css/style.css'); ?>">
+</head>
+<body>
+    <header>
+        <h1>Member Area</h1>
+        <?php echo $include('nav'); ?>
+    </header>
+    <main class="markdown-content">
+        <?php echo $content; ?>
+    </main>
+    <footer>
+        <p>&copy; 2024-<?php echo date('Y'); ?> <a href="https://webdesignfusion.com">Web Design Fusion</a></p>
+    </footer>
+</body>
+</html>
+
+

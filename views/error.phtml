@@ -1,0 +1,18 @@
+<h1>Error <?php echo $e($code); ?></h1>
+<p><?php echo $e($message); ?></p>
+
+<?php if ($config['env'] === 'development' && !empty($debugInfo)): ?>
+    <h2>Debug Information</h2>
+    <p><strong>File:</strong> <?php echo $e($debugInfo['file']); ?></p>
+    <p><strong>Line:</strong> <?php echo $e($debugInfo['line']); ?></p>
+    <h3>Stack Trace:</h3>
+    <pre>
+<?php
+    foreach ($debugInfo['trace'] as $index => $trace) {
+        echo "[$index] ";
+        echo $e($trace['file'] ?? 'Unknown') . ":{$trace['line']} ";
+        echo $e($trace['function'] ?? 'Unknown') . "()\n";
+    }
+?>
+    </pre>
+<?php endif; ?>

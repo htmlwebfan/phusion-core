@@ -1,0 +1,19 @@
+<?php
+$parsedownPath = __DIR__ . '/../lib/Parsedown.php';
+if (file_exists($parsedownPath)) {
+    require_once $parsedownPath;
+    $parsedown = new Parsedown();
+    $parsedown->setSafeMode(true); // Ensure HTML is escaped
+    $content = str_replace(['\n', '\r', '\t'], ["\n", "\r", "\t"], $item['content']);
+    $content = preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/u', '', $content);
+    error_log("Parsedown input: " . json_encode($content));
+} else {
+    die("Error: Parsedown.php not found at $parsedownPath");
+}
+?>
+<h2><?php echo $e($item['title']); ?></h2>
+<?php if ($item['type'] === 'post'): ?>
+    <p>Posted on <?php echo $e(date('F j, Y', strtotime($item['created_at']))); ?></p>
+<?php endif; ?>
+<div><?php echo $parsedown->text($content); ?></div>
+<p><a href="<?php echo $e($base_url . ($item['type'] === 'post' ? '/blog' : '/')); ?>">Back</a></p>
